@@ -1,8 +1,7 @@
 import streamlit as st
-import webbrowser
+from streamlit.util import open_browser
 
-def openTab():
-    webbrowser.open_new_tab("https://duckduckgo.com")
-
-if st.button("Open new tab"):
-    openTab()
+st.button("Open Google!", 
+        key="openWebsite", 
+        on_click=open_browser,
+        args=[r"https://www.google.com"])
