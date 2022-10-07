@@ -24,7 +24,7 @@ def check_password():
         st.text_input(
             "Password", type="password", on_change=password_entered, key="password"
         )
-        st.error("Incorrect" + st.session_state["password"])
+        st.error(f"Incorrect: {st.session_state['password']}")
         return False
     else:
         # Password correct.
