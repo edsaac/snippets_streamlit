@@ -59,7 +59,7 @@ def analyze_results(timeprobe):
     ax.plot(lenghts_to_test, meantimes, alpha=0.5, label="Mean")
     ax.plot(lenghts_to_test, mintimes , marker="x", label="Min")
     #ax.plot(lenghts_to_test, maxtimes , alpha=0.5, label="Max")
-    ax.set_yscale('log')
+    #ax.set_yscale('log')
     ax.legend()
     plt.savefig("times.png")
 
