@@ -1,6 +1,7 @@
 import streamlit as st
 import imgkit
 
+## Add some styling with CSS selectors 
 st.markdown("""
     <style>
     img {
@@ -20,13 +21,14 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+## Dict of URLS to screenshot
 urls = {
     "Search engines": [
         'duckduckgo.com',
         'bing.com',
         'google.com'],
     "Tools": [
-        'streamlit.io',
+        'isocpp.org',
         'wkhtmltopdf.org',
         'www.python.org'],
     "Linux distros": [
@@ -36,9 +38,11 @@ urls = {
     ],
     "Repositories": [
         'github.com',
-        'gitlab.com'
+        'about.gitlab.com'
     ]}
 
+# Some options to pass to wkhtmltoimage
+# (More info in the man)
 options = {
     '--crop-h':'500', 
     '--format':'png',
