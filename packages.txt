@@ -1,1 +1,3 @@
-wkhtmltopdf
+#wkhtmltopdf
+language-pack-fr
+language-pack-es
