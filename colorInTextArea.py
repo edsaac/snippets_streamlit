@@ -21,4 +21,3 @@ st.text_area(
     value="This is a repeated sentence "*20,
     height=300,
     disabled=disable_textarea)
-
