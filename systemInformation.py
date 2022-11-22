@@ -22,3 +22,9 @@ st.code(dfH)
 freeg = subprocess.run(args=["free", "-h"], capture_output=True).stdout.decode('utf-8')
 st.code(f"{freeg}")
 
+"## Processes"
+"### `top -b -n 1 | head -n 30`"
+sortBy = st.radio("Sort by", ["%MEM", "%CPU"])
+topn = subprocess.run(args=f"top -bc -w 300 -n 1 -o +{sortBy}".split(), capture_output=True).stdout.decode('utf-8').splitlines()[4:50]
+st.code("\n".join(topn))
+
