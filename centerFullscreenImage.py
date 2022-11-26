@@ -16,6 +16,6 @@ st.markdown(
 
 "# Center an image when in fullscreen"
 "Images (and most elements in general) are always aligned to the left"
-st.image("https://placekitten.com/g/200/200")
+st.image("https://placekitten.com/g/200/200", caption="Hello!")
 
 #st.image("https://placekitten.com/g/500/500")

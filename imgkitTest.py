@@ -1,6 +1,16 @@
 import streamlit as st
 import imgkit
 
+# '''
+# OSError: 
+# No wkhtmltoimage executable found: "command not found"
+# If this file exists please check that this process can read it.
+# Otherwise please install wkhtmltopdf - http://wkhtmltopdf.org
+
+# `apt install wkhtmltopdf`
+
+# '''
+
 @st.cache
 def get_screeshot(url):
     # Some options to pass to wkhtmltoimage
