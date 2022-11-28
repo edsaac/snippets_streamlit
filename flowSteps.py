@@ -42,37 +42,47 @@
 # # st.info(f"Phase #{val}")
 
 import streamlit as st
+import time
+
 if 'page' not in st.session_state: st.session_state.page = 0
 def nextPage(): st.session_state.page += 1
 def firstPage(): st.session_state.page = 0
 
+if 'data' not in st.session_state: st.session_state.data = "Hi"
+
+## Placeholder to overwrite each step
 ph = st.empty()
 
-## Page 1
+## Step 1
 if st.session_state.page == 0:
+    st.session_state.data += "My String"
     with ph.container():
-        st.header("This is page 1")
-        print("Run Page 1")
-        st.button("Go to page 2",on_click=nextPage)
+        st.header("This is step 1")
+        st.button("Go to step 2",on_click=nextPage)
 
-## Page 2
+## Step 2
 elif st.session_state.page == 1:
     with ph.container():
-        st.header("This is page 2")
-        st.write("Other stuff in page 2")
-        st.write("More stuff in page 2")
-        st.write("More more stuff in page 2")
-        st.write("More more more stuff in page 2")
-        print("Run Page 2")
-        st.button("Go to page 3",on_click=nextPage)
+        st.header("This is step 2")
+        st.write("Other stuff in step 2")
+        st.write("More stuff in step 2")
+        if st.button("Calculate something"):
+            with st.spinner("Wait!"):
+                time.sleep(2)
+                st.snow()
+                st.session_state.data += "👌👌"
+        st.write("More more stuff in step 2")
+        st.write("More more more stuff in step 2")
+        st.button("Go to step 3",on_click=nextPage)
 
-## Page 3
+## Step 3
 elif st.session_state.page == 2:
+    st.session_state.data *= 5
     with ph.container():
-        st.header("This is page 3")
+        st.header("This is step 3")
         st.image("https://placekitten.com/g/1400/600",caption=f"Meowhy")
-        print("Run Page 3")
         st.button("Go back",on_click=firstPage)
+        st.write(st.session_state.data)
 
 # for k,v in st.session_state.items():
 #     st.sidebar.markdown(f"### Key `{k}` is `{v}`")

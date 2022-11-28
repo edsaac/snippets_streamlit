@@ -57,8 +57,13 @@ urls = {
     "Distros": [
         'www.debian.org',
         'linuxmint.com',
-        'archlinux.org'
-    ]}
+        'archlinux.org'],
+    "Streamlit apps": [
+        'edsaac-adv-processing--cee440-lab1-haq37n.streamlitapp.com',
+        'edsaac-adv-processing--cee440-lab1-haq37n.streamlitapp.com?embed=true',
+        'discuss.streamlit.io',
+        'streamlit.io/gallery']
+    }
 
 st.title("🖼️ Gallery of websites")
 
@@ -73,3 +78,4 @@ for url in urls[category]:
         st.image(screenshot, use_column_width=True)
         st.caption("Some additional description")
         "*****"
+
